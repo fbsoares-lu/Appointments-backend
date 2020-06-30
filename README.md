@@ -14,7 +14,8 @@ Tecnologias utilizadas:
 
 ---
 ### `yarn start`
-Para rodar como desenvolvimento.<br />
+
+Para rodar como desenvolvimento.
 Abrir [http://localhost:3333](http://localhost:3333) e visualizar no browser.
----
+
 Create by [Lucas Soares](https://github.com/fbsoares-lu)
