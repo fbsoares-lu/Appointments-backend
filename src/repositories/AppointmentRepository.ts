@@ -32,6 +32,7 @@ export default class AppointmentRepository {
         const findAppointmentInSameDate = this.appointmentRepository.find(appointment => 
             isEqual(date, appointment.date)
         );
+        //huhuhu
 
         return findAppointmentInSameDate || null;
     }
