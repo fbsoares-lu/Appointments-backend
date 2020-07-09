@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn} from 'typeorm';
 
 //decoretor
 @Entity('appointments')
@@ -9,6 +9,12 @@ export default class Appointment {
     @Column()
     provider: string;
     
-    @Column('timestamp')
+    @Column('timestamp with time zone')
     date: Date;
+
+    @CreateDateColumn()
+    created_at: Date;
+
+    @UpdateDateColumn()
+    updated_at: Date;
 }
