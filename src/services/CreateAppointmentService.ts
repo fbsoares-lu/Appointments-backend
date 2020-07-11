@@ -4,6 +4,8 @@ import { getCustomRepository } from 'typeorm'
 import Appointment from '../models/Appointment';
 import AppointmentRepository from '../repositories/AppointmentRepository';
 
+import AppError from '../errors/AppError';
+
 interface appointmentsType {
     provider_id: string;
     date: Date;
@@ -20,7 +22,7 @@ export default class CreateAppointmentService {
         const findAppointmentInSameDate = await appointment.findAppointment(startHour);
 
         if(findAppointmentInSameDate) {
-            throw Error('This appointment is alredy booked!');
+            throw new AppError('This appointment is alredy booked!');
         }
 
         const appointments = appointment.create({
