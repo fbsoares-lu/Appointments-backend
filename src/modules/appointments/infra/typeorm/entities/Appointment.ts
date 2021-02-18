@@ -8,9 +8,8 @@ import {
     JoinColumn
 } from 'typeorm';
 
-import User from './User';
+import User from '@modules/users/infra/typeorm/entities/User';
 
-//decoretor
 @Entity('appointments')
 export default class Appointment {
     @PrimaryGeneratedColumn('uuid')
