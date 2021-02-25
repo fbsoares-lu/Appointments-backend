@@ -1,6 +1,7 @@
 import { compare } from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
 import authConfig from '@config/auth';
+import { injectable, inject } from 'tsyringe';
 
 import AppError from '@shared/errors/AppError';
 
@@ -17,8 +18,12 @@ interface IResponse {
     token: string,
 }
 
+@injectable()
 class CreateSeasionsService {
-    constructor(private userRepository: IUserRepository){};
+    constructor(
+        @inject('UserRepository')
+        private userRepository: IUserRepository
+    ){};
 
     public async execute({email, password}: IRequest): Promise<IResponse> {
 
