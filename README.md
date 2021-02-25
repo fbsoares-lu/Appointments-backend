@@ -6,6 +6,15 @@
 
 The Gobarber application was developed in Rockeseat Bootcamp with the function of connecting barbers and their customers.
 
+<p align="center">
+  <a href="http://makeapullrequest.com">
+    <img src="https://img.shields.io/badge/progress-40%25-brightgreen.svg" alt="PRs Welcome">
+  </a>
+  <a href="http://makeapullrequest.com">
+    <img src="https://img.shields.io/badge/contribuition-welcome-brightgreen.svg" alt="PRs Welcome">
+  </a>
+</p>
+
 ## Tools
 The following tools were used in the project:
 
