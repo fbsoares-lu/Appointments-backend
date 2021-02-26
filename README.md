@@ -20,8 +20,11 @@ The following tools were used in the project:
 
 - [Node.js](https://nodejs.org/en/)
 - [TypeScript](https://www.typescriptlang.org/)
+- [Jest](https://jestjs.io/)
+- [Typeorm](https://typeorm.io/#/)
+- [PostegreSQL](https://www.postgresql.org/)
 
-## Install instructions
+## Install
 
 Before than started, you will need to install the following tools on your machine:
 [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
