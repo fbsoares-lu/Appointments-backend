@@ -7,6 +7,7 @@ import AppError from '@shared/errors/AppError';
 
 import User from '@modules/users/infra/typeorm/entities/User';
 import IUserRepository from '../repositories/IUserRepository';
+import IHashProvider from '../providers/HashProvider/models/IHashProvider';
 
 interface IRequest {
     email: string,
@@ -19,10 +20,13 @@ interface IResponse {
 }
 
 @injectable()
-class CreateSeasionsService {
+class AuthenticateUserService {
     constructor(
         @inject('UserRepository')
-        private userRepository: IUserRepository
+        private userRepository: IUserRepository,
+
+        @inject('HashProvider')
+        private hashProvider: IHashProvider,
     ){};
 
     public async execute({email, password}: IRequest): Promise<IResponse> {
@@ -33,7 +37,7 @@ class CreateSeasionsService {
             throw new AppError('Invalid Email/Password!', 401);
         }
 
-        const passwordMatched = await compare(password, user.password);
+        const passwordMatched = await this.hashProvider.compareHash(password, user.password);
 
         if(!passwordMatched) {
             throw new AppError('Invalid Email/Password!', 401);
@@ -50,4 +54,4 @@ class CreateSeasionsService {
     }
 }
 
-export default CreateSeasionsService;
+export default AuthenticateUserService;
